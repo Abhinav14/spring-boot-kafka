@@ -1,0 +1,23 @@
+server:
+  port: 1950
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
+      springframework.kafka: DEBUG
+
+spring:
+  kafka:
+    consumer:
+      #bootstrap-servers: localhost:9092
+      bootstrap-servers: 192.168.1.3:9094
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: hello
+    producer:
+      #bootstrap-servers: localhost:9092
+      bootstrap-servers: 192.168.1.3:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
